@@ -10,9 +10,15 @@
 * DB_PASSWORD={password for database}
 * DB_NAME={name for database}
 
-2. Запустите контейнер
+2. Запустите контейнер  
+
+Для деплоя
 ```
 docker-compose -f docker/docker-compose.yml up -d --build
+```
+Для локальной разработки
+```
+sh run-dev.sh
 ```
 
 3. Пути для просмотра
