@@ -1,38 +1,39 @@
 <?php
+use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
+dmstr\web\AdminLteAsset::register($this);
 
-AppAsset::register($this);
+$bundle = app\assets\AppAsset::register($this);
+$path = $bundle->baseUrl;
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
     <head>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?php $this->registerCsrfMetaTags() ?>
+        <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body>
+    <body class="hold-transition skin-green-light sidebar-mini">
     <?php $this->beginBody() ?>
+    <div class="wrapper">
 
-    <div class="wrap">
-        <div class="container">
-            <?= $content ?>
-        </div>
+        <?= $this->render('_header', [
+            'path' => $path
+        ]) ?>
+
+        <?= $this->render('_left') ?>
+
+        <?= $this->render('_content', [
+            'content' => $content
+        ]) ?>
+
     </div>
-
-    <footer class="footer">
-    </footer>
 
     <?php $this->endBody() ?>
     </body>
