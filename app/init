@@ -20,10 +20,10 @@ $envNames = array_keys($envs);
 echo "Yii Application Initialization Tool v1.0\n\n";
 
 $requiredParams = [
-    'env' => 'Environment, one of Development and ProductionLinux',
+    'env' => 'Environment, one of Development and Production',
     'db_host' => 'database host',
     'db_name' => 'database name',
-    'db_name' => 'database user',
+    'db_user' => 'database user',
     'db_password' => 'database password',
 ];
 

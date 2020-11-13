@@ -42,7 +42,7 @@ return [
             'config/config-local.php'
         ],
     ],
-    'ProductionLinux' => [
+    'Production' => [
         'path' => 'prod',
         'setWritable' => [
             'runtime',
