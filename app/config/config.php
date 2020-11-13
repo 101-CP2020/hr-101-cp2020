@@ -21,6 +21,7 @@ $config = [
     'bootstrap' => [
         'log',
         'app\api\pub\v1\ModuleBootstrap',
+        'app\api\internal\v1\ModuleBootstrap',
     ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -50,7 +51,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-
+                '/admin' => 'site/index',
+                '/admin/<controller>' => '<controller>',
+                '/admin/<controller>/<action>' => '<controller>/<action>',
             ]
         ],
 
