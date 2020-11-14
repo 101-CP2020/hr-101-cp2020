@@ -22,6 +22,12 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
+        Yii::$app->set('user', [
+            'class' => 'yii\web\User',
+            'identityClass'  => 'app\api\internal\v1\models\ApiInternalService',
+            'enableSession' => false
+        ]);
+
         Yii::$app->request->parsers = ['application/json' => 'yii\web\JsonParser'];
         Yii::$app->request->enableCookieValidation = false;
 
