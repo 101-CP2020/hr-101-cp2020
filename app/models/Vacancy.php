@@ -45,4 +45,10 @@ class Vacancy extends TblVacancies
 
         return false;
     }
+
+    public function getPredictions()
+    {
+        return $this->hasOne(Prediction::class, ['okpdtr' => 'okpdtr'])
+            ->orderBy([Prediction::tableName() . '.created_at' => SORT_DESC])->limit(1);
+    }
 }
