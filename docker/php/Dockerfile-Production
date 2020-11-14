@@ -12,3 +12,4 @@ ARG DB_USER
 ARG DB_PASSWORD
 
 RUN php init --no_interactive --env=$ENV --db_host=$DB_HOST --db_name=$DB_NAME --db_user=$DB_USER --db_password=$DB_PASSWORD
+RUN php yii migrate --interactive=0
