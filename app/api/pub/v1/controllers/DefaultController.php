@@ -21,7 +21,34 @@ class DefaultController extends Controller
     	$searchModel = new VacancySearchProvider();
         $provider = $searchModel->search($params, '');
 
-        return $provider->getModels();
+        $res = [];
+        foreach ($provider->getModels() as $row)
+		{
+			if (!array_key_exists($row->okpdtr, $res))
+			{
+				$res[$row->okpdtr][] = [
+					'okpdtr' => $row->okpdtr,
+					'title' => $row->title,
+					'counts' => 0,
+					'month_3_value' => $row->month_3_value,
+					'month_6_value' => $row->month_6_value,
+					'month_12_value' => $row->month_12_value
+				];
+			}
+			$res[$row->okpdtr][0]['counts'] += $row->counts;
+
+			$res[$row->okpdtr][] = [
+				'okpdtr' => $row->okpdtr,
+				'okved' => $row->okved,
+				'title' => $row->okved_title,
+				'counts' => $row->counts,
+				'month_3_value' => null,
+				'month_6_value' => null,
+				'month_12_value' => null
+			];
+		}
+
+        return $res;
     }
 
     private function getLastDate()
