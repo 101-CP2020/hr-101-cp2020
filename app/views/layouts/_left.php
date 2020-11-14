@@ -9,6 +9,7 @@
                 ['label' => 'Муниципалитет', 'icon' => 'building', 'url' => ['/municipality/index'], 'active' => $this->context->id == 'municipality',],
                 ['label' => 'ОКПДТР', 'icon' => 'list', 'url' => ['/okpdtr/index'], 'active' => $this->context->id == 'okpdtr',],
                 ['label' => 'ОКВЕД', 'icon' => 'list', 'url' => ['/okved/index'], 'active' => $this->context->id == 'okved',],
+                ['label' => 'Вакансии', 'icon' => 'star', 'url' => ['/vacancies/index'], 'active' => $this->context->id == 'vacancies',],
             ],
         ]) ?>
     </section>

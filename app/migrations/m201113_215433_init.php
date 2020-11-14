@@ -93,9 +93,9 @@ class m201113_215433_init extends Migration
             'id' => $this->primaryKey(),
             'okpdtr' => $this->integer()->notNull(),
             'created_at' => $this->integer(),
-            '3_month_value' => $this->integer(),
-            '6_month_value' => $this->integer(),
-            '12_month_value' => $this->integer(),
+            'month_3_value' => $this->integer(),
+            'month_6_value' => $this->integer(),
+            'month_12_value' => $this->integer(),
         ]);
 
         $this->addForeignKey('fk_tbl_predictions_to_okpdtr', 'tbl_predictions', 'okpdtr', 'tbl_okpdtr', 'okpdtr', 'CASCADE');

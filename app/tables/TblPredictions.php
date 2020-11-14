@@ -10,9 +10,9 @@ use Yii;
  * @property int $id
  * @property int $okpdtr
  * @property int|null $created_at
- * @property int|null $3_month_value
- * @property int|null $6_month_value
- * @property int|null $12_month_value
+ * @property int|null $month_3_value
+ * @property int|null $month_6_value
+ * @property int|null $month_12_value
  *
  * @property TblOkpdtr $okpdtr0
  */
@@ -33,8 +33,8 @@ class TblPredictions extends \yii\db\ActiveRecord
     {
         return [
             [['okpdtr'], 'required'],
-            [['okpdtr', 'created_at', '3_month_value', '6_month_value', '12_month_value'], 'default', 'value' => null],
-            [['okpdtr', 'created_at', '3_month_value', '6_month_value', '12_month_value'], 'integer'],
+            [['okpdtr', 'created_at', 'month_3_value', 'month_6_value', 'month_12_value'], 'default', 'value' => null],
+            [['okpdtr', 'created_at', 'month_3_value', 'month_6_value', 'month_12_value'], 'integer'],
             [['okpdtr'], 'exist', 'skipOnError' => true, 'targetClass' => TblOkpdtr::className(), 'targetAttribute' => ['okpdtr' => 'okpdtr']],
         ];
     }
@@ -48,9 +48,9 @@ class TblPredictions extends \yii\db\ActiveRecord
             'id' => 'ID',
             'okpdtr' => 'Okpdtr',
             'created_at' => 'Created At',
-            '3_month_value' => '3 Month Value',
-            '6_month_value' => '6 Month Value',
-            '12_month_value' => '12 Month Value',
+            'month_3_value' => 'Month 3 Value',
+            'month_6_value' => 'Month 6 Value',
+            'month_12_value' => 'Month 12 Value',
         ];
     }
 
