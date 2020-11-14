@@ -104,10 +104,4 @@ class TblVacancies extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TblOkved::className(), ['okved' => 'okved']);
     }
-
-    public function getPredictions()
-	{
-		return $this->hasOne(TblPredictions::class, ['okpdtr' => 'okpdtr'])
-			->orderBy([TblPredictions::tableName() . '.created_at' => SORT_DESC])->limit(1);
-	}
 }

@@ -12,11 +12,11 @@ class AppAsset extends AssetBundle
     public $sourcePath = '@app/assets/src';
     
     public $css = [
-
+        'css/site.css'
     ];
 
     public $js = [
-
+        'js/site.js'
     ];
 
     public $depends = [

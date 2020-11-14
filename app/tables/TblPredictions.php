@@ -48,9 +48,9 @@ class TblPredictions extends \yii\db\ActiveRecord
             'id' => 'ID',
             'okpdtr' => 'Okpdtr',
             'created_at' => 'Created At',
-            'month_3_value' => '3 Month Value',
-            'month_6_value' => '6 Month Value',
-            'month_12_value' => '12 Month Value',
+            'month_3_value' => 'Month 3 Value',
+            'month_6_value' => 'Month 6 Value',
+            'month_12_value' => 'Month 12 Value',
         ];
     }
 
