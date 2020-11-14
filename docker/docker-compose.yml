@@ -10,8 +10,8 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     ports:
       - "${DB_PORT}:5432"
-    depends_on:
-      - php
+    volumes:
+      - postgres-data-volume:/var/lib/postgresql/data
     networks:
       - hr-backend
     container_name: hr-backend-db
@@ -43,11 +43,14 @@ services:
     restart: always
     volumes:
       - "${VOLUME}:/app"
+    depends_on:
+      - db
     networks:
       - hr-backend
     container_name: hr-backend-php
 
 volumes:
   data-volume:
+  postgres-data-volume:
 networks:
   hr-backend:

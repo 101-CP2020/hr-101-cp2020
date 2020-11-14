@@ -5,20 +5,20 @@ namespace app\tables;
 use Yii;
 
 /**
- * This is the model class for table "internal_services".
+ * This is the model class for table "tbl_internal_services".
  *
  * @property int $id
  * @property string $name
  * @property string $access_token
  */
-class InternalServices extends \yii\db\ActiveRecord
+class TblInternalServices extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'internal_services';
+        return 'tbl_internal_services';
     }
 
     /**
