@@ -17,7 +17,7 @@ class ModuleBootstrap implements BootstrapInterface
         $pathPrefix = 'api/public/v1';
 
         $app->getUrlManager()->addRules([
-            'GET ' . $pathPrefix  => 'api-pub-v1/default/index',
+            'GET ' . $pathPrefix .'/vacancies'  => 'api-pub-v1/default/index',
         ], true);
     }
 }

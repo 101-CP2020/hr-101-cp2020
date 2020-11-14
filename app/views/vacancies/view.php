@@ -45,9 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $model->kladr0->title .' ('.$model->kladr.')';
             }],
             'number',
-            ['attribute' => 'month_year', 'value' => function($model){
-                return Yii::$app->formatter->asDate($model->month_year, 'php:M Y');
-            }],
         ],
     ]) ?>
         </div>
