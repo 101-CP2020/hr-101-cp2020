@@ -29,7 +29,6 @@ services:
     networks:
       - hr-backend
     container_name: hr-backend-nginx
-
   php:
     build:
       context: ./..
@@ -51,6 +50,5 @@ services:
 
 volumes:
   data-volume:
-  postgres-data-volume:
 networks:
   hr-backend:
