@@ -15,6 +15,7 @@
 Для деплоя
 ```
 docker-compose -f docker/docker-compose.yml up -d --build
+docker exec -it hr-backend-php sh -c "php yii migrate --interactive=0"
 ```
 Для локальной разработки
 ```
