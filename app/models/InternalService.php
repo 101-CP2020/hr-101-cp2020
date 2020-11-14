@@ -1,9 +1,9 @@
 <?php
 namespace app\models;
 
-use app\tables\InternalServices;
+use app\tables\TblInternalServices;
 
-class InternalService extends InternalServices
+class InternalService extends TblInternalServices
 {
     public function attributeLabels()
     {
